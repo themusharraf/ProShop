@@ -1,0 +1,26 @@
+1.
+2. custom django-admin
+3. multi-lang (en, ru, uz)
+
+
+admin
+moderator
+client
+
+vendors/images/forgot-password.png
+
+hometask
+
+0. login +
+1. register +
+2. forgot-password
+3. verification email
+
+
+4. product ni delete qilganda, imagelar ham delete bolishi kk
+5. fixtures qoshish kk (5ta product, 3ta user, 4ta category) [yml]
+6. product detailda author product larni chiqarish
+
+
+pyscript
+htmx
