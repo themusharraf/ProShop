@@ -12,10 +12,10 @@ urlpatterns = [
     path('forgot', forgot_view, name='forgot_view'),
 
     # password forgot-password
-    path('reset_password/', PasswordResetView.as_view()),
-    path('reset_password_sent/', PasswordResetDoneView.as_view()),
-    path('reset/<uidb64>/<token>', PasswordResetConfirmView.as_view()),
-    path('reset_password_complete/', PasswordResetCompleteView.as_view()),
+    path('reset_password/', PasswordResetView.as_view(), name='reset_password'),
+    path('reset_password_sent/', PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset_password_complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 ]
 
 """
