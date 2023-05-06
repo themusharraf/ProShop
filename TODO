@@ -13,13 +13,49 @@ hometask
 
 0. login +
 1. register +
-2. forgot-password
-3. verification email
+2. forgot-password +
+3. verification email +
+
+
+0. login +
+1. register +
+2. forgot-password +
+3. verification email +
 
 
 4. product ni delete qilganda, imagelar ham delete bolishi kk
 5. fixtures qoshish kk (5ta product, 3ta user, 4ta category) [yml]
 6. product detailda author product larni chiqarish
+
+
+
+2-day
+7. adminkadagi foreign ni pagenation li qilish yoki search
+8. tag qoshish kk (adminkada ntasini tanlay olishi kk)
+9. LATEST PRODUCTS
+
+
+
+
+github link
+3 programming language and 3 db
+docker-compose
+
+
+java (mongo)
+api/product
+{'name': 'olma}
+
+
+
+python django(postgres)
+api/product
+
+
+go (mysql)
+api/product
+
+
 
 
 pyscript

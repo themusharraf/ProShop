@@ -10,26 +10,6 @@ def forgot_view(request):
     return render(request, 'auth/forgot-password.html')
 
 
-# class CustomLoginView(LoginView):
-#     next_page = 'forgot'
-#     template_name = 'auth/login.html'
-#     redirect_authenticated_user = False
-#     success_url = reverse_lazy('forgot_view')
-#
-
-
-# class CustomUserBackend(BaseBackend):
-#     def authenticate(self, request, email=None, password=None, **kwargs):
-#         try:
-#             user = User.objects.get(email=email)
-#         except User.DoesNotExist:
-#             return None
-#
-#         if user.check_password(password):
-#             return user
-#
-#         return None
-
 def login_view(request):
     if request.method == 'POST':
         email = request.POST['email']
