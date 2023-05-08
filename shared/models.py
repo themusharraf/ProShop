@@ -18,16 +18,16 @@ FILE_TYPES = {
 
 def upload_name(instance, filename):
     file_type = filename.split('.')[-1]
-    today = str(datetime.datetime.today())[0:7]
+    date = datetime.datetime.now().strftime('%Y/%m/%d')
 
     for regex, folder in FILE_TYPES.items():
         try:
             RegexValidator(regex).__call__(file_type)
-            return 'file/%s/%s/%s.%s' % (folder, today, uuid.uuid4(), file_type)
+            instance.type = folder
+            return '%s/%s/%s/%s.%s' % (folder, instance._meta.model_name, date, uuid.uuid4(), file_type)
         except ValidationError:
             pass
     raise ValidationError('File type is unacceptable')
-
 
 class BaseMeta:
     abstract = True
