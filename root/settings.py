@@ -10,6 +10,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -98,5 +99,39 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mcayberyt@gmail.com'
-EMAIL_HOST_PASSWORD = 'vapxnubznqgxxicg'
+EMAIL_HOST_USER = 'meibrohimov@gmail.com'
+EMAIL_HOST_PASSWORD = 'hebjvqwpfqobcqys'
+JAZZMIN_SETTINGS = {
+
+    "site_title": "Library Admin",
+
+    "site_header": "Admin",
+
+    "site_brand": "ADMIN",
+
+    "site_logo": "img/avatar.png",
+
+    "welcome_sign": "Salom Admin page ga xo'sh kelibsiz",
+
+    "search_model": ["apps.Product", "apps.Category"],
+
+    # applarni yashirish uchun
+    "hide_apps": [],
+
+    # bazi modellarni yashirish uchun
+    "hide_models": ['auth.User', 'auth.Group'],
+
+    # tepa menu da home va userlar ni chiqarish uchun
+    "topmenu_links": [
+        # Url that gets reversed (Permissions
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"model": "auth.User"},
+    ],
+    # user iconka sin chiqarish uchun
+    "usermenu_links": [
+        {"name": "Support", "url": "https://github.com/musharrafp", "new_window": True},
+        # {"model": "auth.user"},
+    ],
+
+    "show_ui_builder": True,
+}

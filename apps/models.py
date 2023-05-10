@@ -1,3 +1,5 @@
+from itertools import product
+
 from django.db import models
 from shared.models import BaseIDModel, BaseDateModel
 from mptt.fields import TreeForeignKey
@@ -5,6 +7,7 @@ from mptt.models import MPTTModel
 from ckeditor.fields import RichTextField
 from django.db.models import TextChoices
 from shared.models import upload_name
+
 
 class Category(MPTTModel, BaseIDModel):
     name = models.CharField(max_length=255)
@@ -32,6 +35,9 @@ class Product(BaseIDModel, BaseDateModel):
     category = models.ForeignKey('apps.Category', models.CASCADE)
     author = models.ForeignKey('users.User', models.CASCADE)
 
+    def __str__(self):
+        return self.title
+
 
 class ProductImage(BaseIDModel):
     class Type(TextChoices):
@@ -40,5 +46,8 @@ class ProductImage(BaseIDModel):
         VIDEOS = 'videos', 'Videolar'
 
     image = models.ImageField(upload_to=upload_name)
-    product = models.ForeignKey('apps.Product', models.CASCADE, 'images')
+    product = models.ForeignKey('apps.Product',models.CASCADE)
     type = models.CharField(max_length=15, choices=Type.choices)
+
+
+
