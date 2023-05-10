@@ -46,8 +46,15 @@ class ProductImage(BaseIDModel):
         VIDEOS = 'videos', 'Videolar'
 
     image = models.ImageField(upload_to=upload_name)
-    product = models.ForeignKey('apps.Product',models.CASCADE)
+    product = models.ForeignKey('apps.Product', models.CASCADE)
     type = models.CharField(max_length=15, choices=Type.choices)
 
 
+class Comment(BaseIDModel, BaseDateModel):
+    product = models.ForeignKey('apps.Product', models.CASCADE)
+    text = models.TextField(max_length=255)
+    star = models.SmallIntegerField(default=0)
+    author = models.ForeignKey('users.User', models.CASCADE)
 
+    def __str__(self):
+        return self.text

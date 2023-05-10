@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-
-from apps.models import Category, Product, ProductImage, Tags
+from apps.models import Category, Product, ProductImage, Tags, Comment
 from mptt.admin import DraggableMPTTAdmin
 
 
@@ -16,6 +15,7 @@ class ProductStackedInline(admin.StackedInline):
 class CategoryAdmin(DraggableMPTTAdmin):
     search_fields = ('name',)
     inlines = (ProductStackedInline,)
+
 
 
 class ProductImageInline(admin.StackedInline):
@@ -38,3 +38,7 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(Tags)
 class TagsAdmin(admin.ModelAdmin):
     search_fields = ('name',)
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    ...
