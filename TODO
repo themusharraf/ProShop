@@ -3,6 +3,18 @@
 3. multi-lang (en, ru, uz)
 
 
+
+docker run postgres contianer commond
+
+docker run --name data_db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=1 -d -p 5432:5432 postgres:alpine
+
+
+
+
+
+
+
+
 admin
 moderator
 client
